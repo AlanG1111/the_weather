@@ -11,6 +11,8 @@ import { sagaWatcher } from './store/saga';
 const saga = createSagaMiddleware()
 const store = createStore(rootReducer, applyMiddleware(saga))
 
+export type RootState = ReturnType<typeof store.getState>
+
 saga.run(sagaWatcher)
 
 ReactDOM.render(

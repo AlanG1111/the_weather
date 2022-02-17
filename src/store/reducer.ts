@@ -3,6 +3,7 @@ import { IFetchData } from "./actions"
 export interface IState {
     data: null | {}
 }
+
 const initialState:IState = {
     data: null
 }

@@ -1,14 +1,19 @@
 import React, { useEffect } from "react"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
+import { RootState } from ".."
 import { fetchData } from "../store/actions"
 
 const Weather: React.FC = () => {
     const dispatch = useDispatch()
-    const showWeather = () => {
+    const data = useSelector((state: RootState) => state.data)
+
+    const showWeather = (): void => {
         dispatch(fetchData())
     }
 
-    useEffect(() => {
+    console.log('data', data)
+
+    useEffect((): void => {
         dispatch(fetchData())
     }, [])
     return (
