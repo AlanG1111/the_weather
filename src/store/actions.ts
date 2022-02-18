@@ -1,40 +1,6 @@
-import { IData } from "./reducer"
-
-export const FETCH_DATA: string = 'FETCH_DATA'
-export const SHOW_DATA: string = 'SHOW_DATA'
-export const SHOW_MINUTES: string = 'SHOW_MINUTES'
-export const SHOW_HOURS: string = 'SHOW_HOURS'
-export const SHOW_DAY: string = 'SHOW_DAY'
-export const SHOW_WEEK: string = 'SHOW_WEEK'
-
-export interface IFetchData  {
-    type: typeof FETCH_DATA
-}
-
-export interface IShowData {
-    type: typeof SHOW_DATA
-    data: IData
-}
-
-export interface IShowMinutes {
-    type: typeof SHOW_MINUTES
-    showMinutes: boolean
-}
-
-export interface IShowHours {
-    type: typeof SHOW_MINUTES
-    showHours: boolean
-}
-
-export interface IShowDay {
-    type: typeof SHOW_DAY
-    showDay: boolean
-}
-
-export interface IShowWeek {
-    type: typeof SHOW_WEEK
-    showWeek: boolean
-}
+import { IData } from "./helpers/IData"
+import { FETCH_DATA, SHOW_DATA, SHOW_DAY, SHOW_HOURS, SHOW_MINUTES, SHOW_WEEK } from "./helpers/constants"
+import { IFetchData, IShowData, IShowDay, IShowHours, IShowMinutes, IShowWeek } from "./helpers/IActions"
 
 export function fetchData(): IFetchData {
     return {

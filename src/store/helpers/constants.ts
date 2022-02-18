@@ -1,0 +1,6 @@
+export const FETCH_DATA: string = 'FETCH_DATA'
+export const SHOW_DATA: string = 'SHOW_DATA'
+export const SHOW_MINUTES: string = 'SHOW_MINUTES'
+export const SHOW_HOURS: string = 'SHOW_HOURS'
+export const SHOW_DAY: string = 'SHOW_DAY'
+export const SHOW_WEEK: string = 'SHOW_WEEK'

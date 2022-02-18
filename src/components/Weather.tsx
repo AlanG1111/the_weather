@@ -2,7 +2,7 @@ import React, { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { RootState } from ".."
 import { fetchData, showDay, showHours, showMinutes, showWeek } from "../store/actions"
-import { IData } from "../store/reducer"
+import { IData } from "../store/helpers/IData"
 
 const Weather: React.FC = () => {
     const dispatch = useDispatch()
