@@ -1,7 +1,14 @@
-import { IShowData } from "./actions"
+import { act } from "react-dom/test-utils"
+import { IShowData, IShowMinutes, SHOW_DATA, SHOW_DAY, SHOW_HOURS, SHOW_MINUTES, SHOW_WEEK } from "./actions"
 
 export interface IState {
     data: null | { type: string, data?: IData }
+    action: {
+        showMinutes?: boolean
+        showHours?: boolean
+        showDay?: boolean
+        showWeek?: boolean
+    }
 }
 
 export interface IData {
@@ -43,7 +50,20 @@ interface IFeels {
 }
 
 interface IHourly {
-    [key: string]:number | Array<IWeather>
+    clouds: number
+    dew_point: number
+    dt: number
+    feels_like: number
+    humidity: number
+    pop: number
+    pressure: number
+    temp: number
+    uvi: number
+    visibility: number
+    weather: Array<IWeather>
+    wind_deg: number
+    wind_gust: number
+    wind_speed: number
 }
 
 interface IMinutely {
@@ -67,13 +87,63 @@ interface ITemp {
     night: number
 }
 
-const initialState:IState = {
-    data: null
+const initialState: IState = {
+    data: null,
+    action: {
+        showMinutes: false,
+        showHours: false,
+        showDay: false,
+        showWeek: false,
+    }
 }
 
-export const rootReducer = (state: IState = initialState, action: IShowData): IState => {
+export const rootReducer = (state: IState = initialState, action: any): IState => {
+    if(action.type === SHOW_DATA) {
+        return {
+            ...state,
+            data: action
+        }
+    }
+
+    if(action.type === SHOW_MINUTES) {
+        console.log("act", action)
+        return {
+            ...state,
+            action: {
+                showMinutes: action.showMinutes
+            }
+        }
+    }
+
+    if(action.type === SHOW_HOURS) {
+        console.log("act", action)
+        return {
+            ...state,
+            action: {
+                showHours: action.showHours
+            }
+        }
+    }
+
+    if(action.type === SHOW_DAY) {
+        return {
+            ...state,
+            action: {
+                showDay: action.showDay
+            }
+        }
+    }
+
+    if(action.type === SHOW_WEEK) {
+        return {
+            ...state,
+            action: {
+                showWeek: action.showWeek
+            }
+        }
+    }
+
     return {
-        ...state,
-        data: action
+        ...state
     }
 }
