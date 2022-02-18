@@ -1,4 +1,4 @@
-import { IState } from "./reducer"
+import { IData } from "./reducer"
 
 export const FETCH_DATA: string = 'FETCH_DATA'
 const SHOW_DATA: string = 'SHOW_DATA'
@@ -7,9 +7,9 @@ export interface IFetchData  {
     type: typeof FETCH_DATA
 }
 
-interface IShowData {
+export interface IShowData {
     type: typeof SHOW_DATA
-    data: IState
+    data: IData
 }
 
 export function fetchData(): IFetchData {
@@ -18,7 +18,7 @@ export function fetchData(): IFetchData {
     }
 }
 
-export function showData(payload: IState): IShowData {
+export function showData(payload: IData): IShowData {
     return {
         type: SHOW_DATA,
         data: payload
