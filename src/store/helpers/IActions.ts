@@ -7,25 +7,25 @@ export interface IFetchData  {
 
 export interface IShowData {
     type: typeof SHOW_DATA
-    data: IData
+    data?: IData
 }
 
 export interface IShowMinutes {
     type: typeof SHOW_MINUTES
-    showMinutes: boolean
+    showMinutes?: boolean
 }
 
 export interface IShowHours {
     type: typeof SHOW_MINUTES
-    showHours: boolean
+    showHours?: boolean
 }
 
 export interface IShowDay {
     type: typeof SHOW_DAY
-    showDay: boolean
+    showDay?: boolean
 }
 
 export interface IShowWeek {
     type: typeof SHOW_WEEK
-    showWeek: boolean
+    showWeek?: boolean
 }

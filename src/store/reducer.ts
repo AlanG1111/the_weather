@@ -12,7 +12,7 @@ const initialState: IState = {
     }
 }
 
-export const rootReducer = (state: IState = initialState, action: any): IState => {
+export const rootReducer = (state: IState = initialState, action: any ): IState => {
     if(action.type === SHOW_DATA) {
         return {
             ...state,
@@ -21,7 +21,6 @@ export const rootReducer = (state: IState = initialState, action: any): IState =
     }
 
     if(action.type === SHOW_MINUTES) {
-        console.log("act", action)
         return {
             ...state,
             action: {
@@ -31,7 +30,6 @@ export const rootReducer = (state: IState = initialState, action: any): IState =
     }
 
     if(action.type === SHOW_HOURS) {
-        console.log("act", action)
         return {
             ...state,
             action: {

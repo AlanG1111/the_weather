@@ -4,7 +4,7 @@ import { FETCH_DATA } from './helpers/constants';
 import { IData } from './helpers/IData'
 
 
-const url = 'https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&exclude=current&appid=f2444907376f4bbf78e2af4a9abbbec2'
+const url: string = 'https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&exclude=current&appid=f2444907376f4bbf78e2af4a9abbbec2'
 
 export function* sagaWatcher() {
     yield takeEvery(FETCH_DATA, sagaWorker)

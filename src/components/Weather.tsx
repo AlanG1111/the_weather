@@ -14,7 +14,6 @@ const Weather: React.FC = () => {
     
     const thisWeek = data?.daily.slice(0, 7)
     const thisDay = data?.daily[0]
-    console.log("thisWeek", thisWeek)
 
     let theDate
 
@@ -42,6 +41,7 @@ const Weather: React.FC = () => {
     useEffect((): void => {
         dispatch(fetchData())
     }, [])
+    
     return (
         <>
             <h1>The Weather of {theDate?.toString()}</h1>

@@ -18,27 +18,27 @@ export function showData(payload: IData): IShowData {
 export function showMinutes(showMinutes: boolean): IShowMinutes {
     return {
         type: SHOW_MINUTES,
-        showMinutes: showMinutes
+        showMinutes: showMinutes,
     }
 }
 
 export function showHours(showHours: boolean): IShowHours {
     return {
         type: SHOW_HOURS,
-        showHours: showHours
+        showHours: showHours,
     }
 }
 
 export function showDay(showDay: boolean): IShowDay {
     return {
         type: SHOW_DAY,
-        showDay: showDay
+        showDay: showDay,
     }
 }
 
 export function showWeek(showWeek: boolean): IShowWeek {
     return {
         type: SHOW_WEEK,
-        showWeek: showWeek
+        showWeek: showWeek,
     }
 }
